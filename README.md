@@ -141,24 +141,23 @@ vue2 ， 模拟器
    </script>
    ```
 
-```
 ### webview 部分
 
 通过使用 uni.webview.js (文末附录放源码，我做了些许修改，逻辑没改，是一些变量调整了下) 的功能 postMessage , 向 app 发送图片生成的 base64；
 
 1. main.js 中挂载 uWeb (uni.webview.js)
-
-```js
-// main.js
-// 全局添加uWeb
-// #ifdef H5
-import uWeb from "@/utils/uni.webview.js";
-// #endif
-
-// #ifdef H5
-Vue.prototype.$uWeb = uWeb;
-// #endif
-```
+   
+   ```js
+   // main.js
+   // 全局添加uWeb
+   // #ifdef H5
+   import uWeb from "@/utils/uni.webview.js";
+   // #endif
+   
+   // #ifdef H5
+   Vue.prototype.$uWeb = uWeb;
+   // #endif
+   ```
 
 2. 生成的图片base64，通过以下方式发送给 app
    
@@ -250,25 +249,15 @@ export { appSendMessage, webviewGetMessage };
 
 至此，完成了 app 向 webview 发送信息
 
-
-
-
-
-
-
 ## GitHub 地址
 
 [GitHub - adcGG/uniapp-app-webview: Communication between app and webview](https://github.com/adcGG/uniapp-app-webview)
 
 这里 uniapp 项目，app 和 用到的 h5 地址是同一个项目下的
 
-app/index 用到的 webview 的 url 为 webviewUrl: "http://192.168.1.16:8080/#/pages/h5/index",
+app/index 用到的 webview 的 url 为 webviewUrl: "<http://192.168.1.16:8080/#/pages/h5/index>",
 
 <img title="" src="./md/webview_url.png" alt="">
-
-
-
-
 
 ## 附录
 
@@ -542,5 +531,4 @@ app/index 用到的 webview 的 url 为 webviewUrl: "http://192.168.1.16:8080/#/
   if (!E.navigateTo) for (var b in l) t(l, b) && (E[b] = l[b]);
   return (E.webView = l), E;
 });
-
 ```
