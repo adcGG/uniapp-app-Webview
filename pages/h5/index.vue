@@ -1,5 +1,7 @@
 <template>
   <view>
+    <view> 这里是h5的页面 </view>
+
     <view>
       <image
         id="pic"
@@ -17,16 +19,29 @@
     <view class="center">
       <view class="btn" @click="imgToBase64"> 保存图片 </view>
     </view>
+    <view>
+      获取 app 发送的信息:
+      {{ appMsg }}
+    </view>
   </view>
 </template>
 
 <script>
+import { webviewGetMessage } from "../../utils/appToWebview";
 import { getImage } from "../../utils/img";
 export default {
   components: {},
   props: {},
   data() {
-    return {};
+    return {
+      appMsg: undefined,
+    };
+  },
+  created() {
+    webviewGetMessage("msgFromApp", (params) => {
+      console.log("getAppParams", params);
+      this.appMsg = params;
+    });
   },
   mounted() {},
   methods: {
@@ -34,7 +49,6 @@ export default {
       const imgPicEl = document
         .getElementById("pic")
         ?.getElementsByTagName("img")[0];
-      console.dir(imgPicEl);
       const imgBase64 = getImage(imgPicEl);
       const downloadName = new Date().getTime() + ".png";
       this.$uWeb.postMessage({

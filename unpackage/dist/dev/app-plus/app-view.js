@@ -519,12 +519,13 @@ var render = function () {
     "uni-view",
     { attrs: { _i: 0 } },
     [
+      _c("uni-view", { attrs: { _i: 1 } }, [_vm._v("这里是h5的页面")]),
       _c(
         "uni-view",
-        { attrs: { _i: 1 } },
+        { attrs: { _i: 2 } },
         [
           _c("v-uni-image", {
-            style: _vm._$g(2, "s"),
+            style: _vm._$g(3, "s"),
             attrs: {
               id: "pic",
               src: "/static/mirage.png",
@@ -532,7 +533,7 @@ var render = function () {
               "lazy-load": "false",
               binderror: "",
               bindload: "",
-              _i: 2,
+              _i: 3,
             },
           }),
         ],
@@ -540,13 +541,13 @@ var render = function () {
       ),
       _c(
         "uni-view",
-        { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
+        { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } },
         [
           _c(
             "uni-view",
             {
-              staticClass: _vm._$g(4, "sc"),
-              attrs: { _i: 4 },
+              staticClass: _vm._$g(5, "sc"),
+              attrs: { _i: 5 },
               on: {
                 click: function ($event) {
                   return _vm.$handleViewEvent($event)
@@ -558,6 +559,9 @@ var render = function () {
         ],
         1
       ),
+      _c("uni-view", { attrs: { _i: 6 } }, [
+        _vm._v("获取 app 发送的信息:\n    " + _vm._$g(6, "t0-0")),
+      ]),
     ],
     1
   )

@@ -6,9 +6,8 @@ function getImage(image) {
   canvas.height = image.height;
   let context = canvas.getContext("2d");
   context.drawImage(image, 0, 0, image.width, image.height);
-  let quality = 0.8;
   // 这里的dataurl就是base64类型
-  let dataURL = canvas.toDataURL("image/png", quality);
+  let dataURL = canvas.toDataURL("image/png");
   return dataURL;
 }
 
