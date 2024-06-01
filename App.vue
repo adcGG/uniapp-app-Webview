@@ -14,12 +14,6 @@ export default {
     plus.globalEvent.addEventListener("plusMessage", this.plusMessageHandler);
     // #endif
   },
-  onShow: function () {
-    console.log("App Show");
-  },
-  onHide: function () {
-    console.log("App Hide");
-  },
   methods: {
     /**
      * 将所有导出的 app 事件
