@@ -2,6 +2,11 @@
 import * as appPlusMessageHandler from "./utils/appMessageHandler";
 
 export default {
+  data() {
+    return {
+      appRegisterMap: undefined,
+    };
+  },
   onLaunch: function () {
     console.log("App Launch");
     // #ifdef APP-PLUS
@@ -22,10 +27,14 @@ export default {
      * 返回 map
      */
     registerAppPlusMap() {
+      if (this.appRegisterMap) {
+        return this.appRegisterMap;
+      }
       let map = new Map();
       Object.keys(appPlusMessageHandler).forEach((item) => {
         map.set(item, appPlusMessageHandler[item]);
       });
+      this.appRegisterMap = map;
       return map;
     },
     /**

@@ -1,6 +1,6 @@
 // 这里代码都在app下执行
 function appSaveImgFile(params) {
-  const { base64, downloadName } = params
+  const { base64, downloadName } = params;
   const bitmap = new plus.nativeObj.Bitmap("test");
   bitmap.loadBase64Data(
     base64,
@@ -50,6 +50,4 @@ function appSaveImgFile(params) {
   );
 }
 
-export {
-  appSaveImgFile,
-}
+export { appSaveImgFile };
